@@ -1,0 +1,73 @@
+Porcentaje de victoria de cada equipo:
+
+	Lvl Maestria de cada integrante del equipo = 0 -> 7
+		Puntos = 0 -> 70
+
+	Puntos de Maestria de cada integrante del equipo = 0 -> 1,000,000
+		Puntos = puntuación Maestria / 10,000
+			Puntos = 0 -> 100
+
+	Tier De cada integrante =
+		Puntos = 0 -> 90
+			Unranked = 0
+			Bronce = 15
+			Plata = 30
+			Oro = 45
+			Platino = 60
+			Diamante = 75
+			Maestro = 90
+
+	Rank de cada integrante =
+		Puntos = 2 -> 10
+			V = 2
+			IV = 4
+			III = 6
+			II = 8
+			I = 10
+
+	Puntos por Winrate de cada Integrante en ranked = 0 -> 100
+		Puntos = 0 -> 100
+
+			Unranked = 0
+			Bronce = Winrate * 0.1
+			Plata = winrate * 0.2
+			Oro = winrate * 0.4
+			Platino = winrate * 0.6
+			Diamante = winrate * 0.8
+			Maestro = winrate
+			
+Total = 70 + 100 + 90 + 10 + 100 = 257
+
+
+		Puntaje individual maximo = 257
+El Jugador mas peligroso del equipo será quien se acerque más al puntaje máximo.
+El menos peligroso será quien se aleje más del puntaje máximo.
+
+Puntaje máximo por equipo = 257 * 5 = 1285
+El equipo más peligroso será el que más se acerque al puntaje máximo.
+El menos peligroso será quien se aleje más del puntaje máximo.
+
+Porcentaje de victoria Equipo 1 = Puntaje Máximo por equipo 1 + (Suma de los puntajes de ambos equipos)
+Porcentaje de victoria Equipo 2 = Puntaje Máximo por equipo 2 + (Suma de los puntajes de ambos equipos)
+
+
+
+Ejemplo Individual:
+
+xShadowThunder - Blitz - Maestria 6 - 123965 - Oro IV - 51 * 0.4
+6 + 123965/10,000 + 45 + 4 + 20.4
+87.79
+
+Untold Justice - Lux - Maestria 7 - 165097 - Bronce I - 68 * 0.1
+7 + 165097/10,000 + 15 + 10 + 6.8
+55
+
+Bonzer - Lucian - Maestria 7 - 217937 - Diamante V - 59 * 0.8
+7 + 217937/10,000 + 75 + 2 + 53.1
+7 + 21.7 + 75 + 2 + 53.1
+158.89
+
+Magician - Lucian - Maestria 6 - 112651 - Platino III - 50 * 0.8
+6 + 112651/10,000 + 60 + 6 + 40
+6 + 11.2 + 66 + 40
+123.2

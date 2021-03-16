@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+	<html lang="es">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+		<link rel="stylesheet" href="css/index.css">
+		<link rel='shortcut icon' type='image/x-icon' href='favicon.ico' />
+		<title>Rift Spectator</title>
+		<script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+		<script src="js/index.js"></script>
+	</head>
+	<body>
+		<div class="container-fluid" align="center">
+			<div class="jumbotron" align="center">
+				<h1 class="display-3">Rift Spectator</h1>
+				
+			</div>
+			<div class="form-inline justify-content-center text-center" >
+				<label class="mr-sm-2" for="Summname">Nombre de invocador</label>
+				<input class="form-control" type="text" id="Summname" name="Summname"> 
+				<label class="mr-sm-2" for="Region">Region</label>
+				<select class="form-control" id="Region" name="Region">
+				    <option selected>Elija...</option>
+				    <option value="1">BR</option>
+				    <option value="2">EUNE</option>
+				    <option value="3">EUW</option>
+				    <option value="4">JP</option>
+				    <option value="5">KR</option>
+				    <option value="6">LAN</option>
+				    <option value="7">LAS</option>
+				    <option value="8">NA</option>
+				    <option value="9">OCE</option>
+				    <option value="10">TR</option>
+				    <option value="11">RU</option>
+				</select>
+				<button class="btn btn-primary" id="boton">Buscar</button>		
+			</div>
+			<div class="info">
+
+			</div>
+		</div>
+
+		<div class="modal fade mymodal-width" id="MyModal" tabindex="-1" role="dialog" aria-labelledby="modal-title" aria-hidden="true">
+		  <div class="modal-dialog modal-lg" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <h5 class="modal-title" id="modal-title"></h5>
+		      </div>
+		      <div class="modal-body mymodal-width" id="modal-body">
+		      	<table class="table" id="tabla">
+					<thead class="table-active">
+						<tr>
+							<th id="A1" colspan="9"></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class="table-primary"> 
+							<td id="A2">Equipo 1</td>
+							<td id="B2">Hechizos de Invocador</td>
+							<td id="C2">Runas</td>
+							<td id="D2">Campeón + Nivel Maestria</td>
+							<td id="E2">Liga</td>
+							<td id="F2">Porcentaje de victoria</td>
+							<td id="G2" colspan="2"></td>
+						</tr>
+						<tr id="Z0"> 
+							<td id="A3"></td>
+							<td id="B3"></td>
+							<td id="C3"></td>
+							<td id="D3"></td>
+							<td id="E3"></td>
+							<td id="F3"></td>
+							<td id="G3">
+								<button type="button" class="btn btn-sm btn-success" id="G3A" href="#" data-toggle="popover" title="Tips Aliado" data-content="">Aliado</a>
+							</td>
+							<td id="H3">
+								<button type="button" class="btn btn-sm btn-danger" id="H3A" href="#" data-toggle="popover" title="Tips Enemigo" data-content="">Enemigo</a>
+							</td>
+						</tr>
+						<tr id="Z1"> 
+							<td id="A4"></td>
+							<td id="B4"></td>
+							<td id="C4"></td>
+							<td id="D4"></td>
+							<td id="E4"></td>
+							<td id="F4"></td>
+							<td id="G4">
+								<button type="button" class="btn btn-sm btn-success" id="G4A" href="#" data-toggle="popover" title="Tips Aliado" data-content="">Aliado</a>
+							</td>
+							<td id="H4">
+								<button type="button" class="btn btn-sm btn-danger" id="H4A" href="#" data-toggle="popover" title="Tips Enemigo" data-content="">Enemigo</a>
+							</td>
+						</tr>
+						<tr id="Z2"> 
+							<td id="A5"></td>
+							<td id="B5"></td>
+							<td id="C5"></td>
+							<td id="D5"></td>
+							<td id="E5"></td>
+							<td id="F5"></td>
+							<td id="G5">
+								<button type="button" class="btn btn-sm btn-success" id="G5A" href="#" data-toggle="popover" title="Tips Aliado" data-content="">Aliado</a>
+							</td>
+							<td id="H5">
+								<button type="button" class="btn btn-sm btn-danger" id="H5A" href="#" data-toggle="popover" title="Tips Enemigo" data-content="">Enemigo</a>
+							</td>
+						</tr>
+						<tr id="Z3"> 
+							<td id="A6"></td>
+							<td id="B6"></td>
+							<td id="C6"></td>
+							<td id="D6"></td>
+							<td id="E6"></td>
+							<td id="F6"></td>
+							<td id="G6">
+								<button type="button" class="btn btn-sm btn-success" id="G6A" href="#" data-toggle="popover" title="Tips Aliado" data-content="">Aliado</a>
+							</td>
+							<td id="H6">
+								<button type="button" class="btn btn-sm btn-danger" id="H6A" href="#" data-toggle="popover" title="Tips Enemigo" data-content="">Enemigo</a>
+							</td>
+						</tr>
+						<tr id="Z4"> 
+							<td id="A7"></td>
+							<td id="B7"></td>
+							<td id="C7"></td>
+							<td id="D7"></td>
+							<td id="E7"></td>
+							<td id="F7"></td>
+							<td id="G7">
+								<button type="button" class="btn btn-sm btn-success" id="G7A" href="#" data-toggle="popover" title="Tips Aliado" data-content="">Aliado</a>
+							</td>
+							<td id="H7">
+								<button type="button" class="btn btn-sm btn-danger" id="H7A" href="#" data-toggle="popover" title="Tips Enemigo" data-content="">Enemigo</a>
+							</td>
+						</tr>
+						<tr class="table-warning"> 
+							<td id="A8">Equipo 2</td>
+							<td id="B8">Hechizos de Invocador</td>
+							<td id="C8">Runas</td>
+							<td id="D8">Campeón + Nivel Maestria</td>
+							<td id="E8">Liga</td>
+							<td id="F8">Porcentaje de victoria</td>
+							<td id="G8" colspan="2"></td>
+						</tr>
+						<tr id="Z5"> 
+							<td id="A9"></td>
+							<td id="B9"></td>
+							<td id="C9"></td>
+							<td id="D9"></td>
+							<td id="E9"></td>
+							<td id="F9"></td>
+							<td id="G9">
+								<button type="button" class="btn btn-sm btn-success" id="G9A" href="#" data-toggle="popover" title="Tips Aliado" data-content="">Aliado</a>
+							</td>
+							<td id="H9">
+								<button type="button" class="btn btn-sm btn-danger" id="H9A" href="#" data-toggle="popover" title="Tips Enemigo" data-content="">Enemigo</a>
+							</td>
+						</tr>
+						<tr id="Z6"> 
+							<td id="A10"></td>
+							<td id="B10"></td>
+							<td id="C10"></td>
+							<td id="D10"></td>
+							<td id="E10"></td>
+							<td id="F10"></td>
+							<td id="G10">
+								<button type="button" class="btn btn-sm btn-success" id="G10A" href="#" data-toggle="popover" title="Tips Aliado" data-content="">Aliado</a>
+							</td>
+							<td id="H10">
+								<button type="button" class="btn btn-sm btn-danger" id="H10A" href="#" data-toggle="popover" title="Tips Enemigo" data-content="">Enemigo</a>
+							</td>
+						</tr>
+						<tr id="Z7"> 
+							<td id="A11"></td>
+							<td id="B11"></td>
+							<td id="C11"></td>
+							<td id="D11"></td>
+							<td id="E11"></td>
+							<td id="F11"></td>
+							<td id="G11">
+								<button type="button" class="btn btn-sm btn-success" id="G11A" href="#" data-toggle="popover" title="Tips Aliado" data-content="">Aliado</a>
+							</td>
+							<td id="H11">
+								<button type="button" class="btn btn-sm btn-danger" id="H11A" href="#" data-toggle="popover" title="Tips Enemigo" data-content="">Enemigo</a>
+							</td>
+						</tr>
+						<tr id="Z8"> 
+							<td id="A12"></td>
+							<td id="B12"></td>
+							<td id="C12"></td>
+							<td id="D12"></td>
+							<td id="E12"></td>
+							<td id="F12"></td>
+							<td id="G12">
+								<button type="button" class="btn btn-sm btn-success" id="G12A" href="#" data-toggle="popover" title="Tips Aliado" data-content="">Aliado</a>
+							</td>
+							<td id="H12">
+								<button type="button" class="btn btn-sm btn-danger" id="H12A" href="#" data-toggle="popover" title="Tips Enemigo" data-content="">Enemigo</a>
+							</td>
+						</tr>
+						<tr id="Z9"> 
+							<td id="A13"></td>
+							<td id="B13"></td>
+							<td id="C13"></td>
+							<td id="D13"></td>
+							<td id="E13"></td>
+							<td id="F13"></td>
+							<td id="G13">
+								<button type="button" class="btn btn-sm btn-success" id="G13A" href="#" data-toggle="popover" title="Tips Aliado" data-content="">Aliado</a>
+							</td>
+							<td id="H13">
+								<button type="button" class="btn btn-sm btn-danger" id="H13A" href="#" data-toggle="popover" title="Tips Enemigo" data-content="">Enemigo</a>
+							</td>
+						</tr>
+					</tbody>
+		      	</table>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+
+	</body>
+</html>
